@@ -12,5 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
+//= require jquery-ui/effect
+//= require jquery-ui/draggable
+//= require jquery-ui/droppable
+//= require jquery-ui/sortable
+//= require bootstrap-sprockets
 //= require_tree .
