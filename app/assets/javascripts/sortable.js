@@ -73,7 +73,7 @@ $(function() {
     });
 
     $.post('/list_items/order', { 'list_item_order[]': listItemOrder }, function (data) {
-      alert('Pokémon team saved! (Try refreshing, just to make sure)')
+      $('#list-save-modal').modal('show')
     })
   });
 });
