@@ -3,10 +3,10 @@
     <div class='col-xs-6'>
       <div class='panel panel-info'>
         <div class='panel-heading'>
-          <h3 class='panel-title'>Choose your items</h3>
+          <h3 class='panel-title'>Choose your Pokémon from Somebody's PC</h3>
         </div>
         <ul id='list-origin' class='list-group'>
-          <% @resources.each do |resource| %>
+          <% @resources.sort_by(&:id).each do |resource| %>
             <li data-list-item-id='<%= resource.id %>' class='list-group-item list-origin-item'
                 data-toggle='tooltip' data-placement='left' title='<%= resource.details %>'
                 data-item-draggable='<%= !!resource.position %>'>
@@ -22,11 +22,11 @@
     <div class='col-xs-6'>
       <div id='panel-sorting' class='panel panel-success'>
         <div class='panel-heading'>
-          <h3 class='panel-title'>Sort your items</h3>
+          <h3 class='panel-title'>Sort your Pokémon</h3>
         </div>
         <ul id='list-sorting' class='list-group'>
           <li id='list-item-placeholder' class='list-group-item'>
-            Drag items from the left over here!
+            Drag Pokémon from the PC over here!
           </li>
           <% @resources.where.not(position: nil).sort_by { |item| item.position }.each do |resource| %>
             <li data-list-item-id='<%= resource.id %>' class='list-group-item list-sorted-item'

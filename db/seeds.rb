@@ -1,7 +1,15 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+ListItem.create(title: 'Venusaur', details: 'Seed Pokémon')
+ListItem.create(title: 'Charizard', details: 'Flame Pokémon')
+ListItem.create(title: 'Blastoise', details: 'Shellfish Pokémon')
+ListItem.create(title: 'Pidgey', details: 'Tiny Bird Pokémon')
+ListItem.create(title: 'Pikachu', details: 'Mouse Pokémon')
+ListItem.create(title: 'Zubat', details: 'Bat Pokémon')
+ListItem.create(title: 'Alakazam', details: 'Psi Pokémon')
+ListItem.create(title: 'Machamp', details: 'Superpower Pokémon')
+ListItem.create(title: 'Hitmonchan', details: 'Punching Pokémon')
+ListItem.create(title: 'Gyarados', details: 'Atrocious Pokémon')
+ListItem.create(title: 'Ditto', details: 'Transform Pokémon')
+ListItem.create(title: 'Snorlax', details: 'Sleeping Pokémon')
+ListItem.create(title: 'Articuno', details: 'Freeze Pokémon')
+ListItem.create(title: 'Dragonite', details: 'Dragon Pokémon')
+ListItem.create(title: 'Mewtwo', details: 'Genetic Pokémon')
