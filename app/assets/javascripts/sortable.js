@@ -1,8 +1,8 @@
 $(function() {
-  $('[data-toggle="tooltip"]').tooltip()
+  $('[data-toggle="tooltip"]').tooltip();
 
   var fixHelper = function(ui) {
-    var $target = $(ui.currentTarget)
+    var $target = $(ui.currentTarget);
     var $dupItem = $('<li></li>').html($target.html()).addClass('list-group-item');
     $dupItem.width($target.width());
 
@@ -26,7 +26,8 @@ $(function() {
   $('#list-sorting').droppable({
     accept: ".list-origin-item",
     drop: function (event, ui) {
-      $('[data-toggle="tooltip"]').tooltip()
+      $('[data-toggle="tooltip"]').tooltip();
+      console.log('hiding')
       $('#list-item-placeholder').hide();
 
       //disable item from being dragged over twice
@@ -40,7 +41,6 @@ $(function() {
   }).sortable({
     items: ':not(#list-item-placeholder)',
     revert: true,
-    tolerance: 'pointer',
     forcePlaceholderSize: true,
     placeholder: 'sortable-placeholder list-group-item',
     containment: $('#panel-sorting')
@@ -49,12 +49,12 @@ $(function() {
   // handle sorted list item removal
   $('#list-sorting').delegate('.remove-item-btn', 'click', function (event) {
     //re-enable dragging from item on the left
-    var itemId = $(this).parent().data('list-item-id')
-    var originItem = $('#list-origin').find('[data-list-item-id=' + itemId + ']')
+    var itemId = $(this).parent().data('list-item-id');
+    var originItem = $('#list-origin').find('[data-list-item-id=' + itemId + ']');
     originItem.draggable('enable').removeClass('disabled');
 
     //remove list item
-    $(this).parent().tooltip('hide').remove()
+    $(this).parent().tooltip('hide').remove();
 
     // check if this is last item
     if ($('#list-sorting li').length === 1) {
@@ -68,11 +68,11 @@ $(function() {
 
     var listItemOrder = [];
     $('#list-sorting').children(':data(list-item-id)').each(function (idx) {
-      listItemOrder.push($(this).data('list-item-id'))
+      listItemOrder.push($(this).data('list-item-id'));
     });
 
     $.post('/list_items/order', { 'list_item_order[]': listItemOrder }, function (data) {
-      $('#list-save-modal').modal('show')
-    })
+      $('#list-save-modal').modal('show');
+    });
   });
 });
