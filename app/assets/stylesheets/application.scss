@@ -20,9 +20,20 @@
 @import "bootstrap";
 
 body {
-  background-color: #666
+  background-color: #666;
 }
 
 .navbar {
   margin-top: 20px;
+}
+
+.ui-draggable-dragging {
+  box-shadow: 5px 5px 8px #222;
+  -ms-transform: rotate(-6deg);
+  -webkit-transform: rotate(-6deg);
+  transform: rotate(-6deg);
+}
+
+.sortable-placeholder {
+  background-color: #d9edf7
 }

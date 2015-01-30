@@ -38,7 +38,11 @@ $(function() {
       ui.draggable.find('.btn').switchClass('hidden', 'show');
     }
   }).sortable({
+    items: ':not(#list-item-placeholder)',
     revert: true,
+    tolerance: 'pointer',
+    forcePlaceholderSize: true,
+    placeholder: 'sortable-placeholder list-group-item',
     containment: $('#panel-sorting')
   });
 
