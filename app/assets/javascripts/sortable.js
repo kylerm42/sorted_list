@@ -3,14 +3,10 @@ $(function() {
 
   var fixHelper = function(ui) {
     var $target = $(ui.currentTarget)
-    var $newItem = $('<li></li>').html($target.html()).addClass('list-group-item');
-    $newItem.width($target.width());
-    var children = $target.children();
+    var $dupItem = $('<li></li>').html($target.html()).addClass('list-group-item');
+    $dupItem.width($target.width());
 
-    $newItem.children().each(function(i, child) {
-      $(child).width($(children[i]).width());
-    });
-    return $newItem;
+    return $dupItem;
   };
 
   // hide placeholder if unnecessary
@@ -54,8 +50,7 @@ $(function() {
     originItem.draggable('enable').removeClass('disabled');
 
     //remove list item
-    $(this).parent().tooltip('hide')
-    $(this).parent().remove();
+    $(this).parent().tooltip('hide').remove()
 
     // check if this is last item
     if ($('#list-sorting li').length === 1) {
